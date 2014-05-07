@@ -1,0 +1,55 @@
+{
+    "properties": {
+        "name": "NoFlo-beta-20140507",
+        "id": "eywos",
+        "project": "bob-beta-20140507",
+        "environment": {
+            "type": "noflo-browser",
+            "content": "<p>These are the preview contents</p>"
+        },
+        "description": "Repeat Alert"
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "prompts/Alert_6wq8y": {
+            "component": "prompts/Alert",
+            "metadata": {
+                "label": "prompts/Alert",
+                "x": 396,
+                "y": 216
+            }
+        },
+        "core/Repeat_hqmaa": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "core/Repeat",
+                "x": 216,
+                "y": 216
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/Repeat_hqmaa",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "prompts/Alert_6wq8y",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 4
+            }
+        },
+        {
+            "data": "hello, world",
+            "tgt": {
+                "process": "core/Repeat_hqmaa",
+                "port": "in"
+            }
+        }
+    ]
+}
